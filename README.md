@@ -1,19 +1,22 @@
 # RuntimeConfig
 
-**TODO: Add description**
+Load config values at runtime and can handle config values like `{:system, "ENV_NAME"}`.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `runtime_config` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `runtime_config` to your list of
+dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:runtime_config, "~> 0.1.0"}]
+  [
+    {:runtime_config, "~> 0.1.0"},
+  ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/runtime_config](https://hexdocs.pm/runtime_config).
+## Usage
 
+```elixir
+my_val = Config.get_env(:my_app, :my_key)
+```
